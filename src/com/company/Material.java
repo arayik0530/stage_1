@@ -23,6 +23,10 @@ public class Material {
         }
     }
 
+    public void setType(final Type type) {
+        this.type = type;
+    }
+
     /** Equals and hashcode have been overridden to make Set<Materials> in Warehouse work correctly,
      * because Set is a container of a unique elements, and elements are checked whether they are unique or
      * not using hashcode */
@@ -31,7 +35,7 @@ public class Material {
         if (this == o) return true;
         if (!(o instanceof Material)) return false;
         final Material material = (Material) o;
-        return getType().getName().equalsIgnoreCase(material.getType().getName());
+        return this.getType().getName().equalsIgnoreCase(material.getType().getName());
     }
 
     @Override
@@ -39,7 +43,4 @@ public class Material {
         return Objects.hash(getType().getName());
     }
 
-    public void setType(final Type type) {
-        this.type = type;
-    }
 }

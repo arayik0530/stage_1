@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -45,10 +46,12 @@ public class WareHouse {
         boolean contains = false;
 
         Material materialToBeRemoved = new Material();
-        for(Material materiall: materials){
+
+        for(Material materiall: this.materials){
             if(materiall.equals(material)){
                 contains = true;
                 materialToBeRemoved = materiall;
+                break;
             }
         }
 
@@ -71,7 +74,7 @@ public class WareHouse {
     }
 
     public WareHouse(Set<Material> materials) {
-        this.materials = new HashSet<>();
+        this.materials = materials;
     }
 
     public Set<Material> getMaterials() {
